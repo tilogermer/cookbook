@@ -1,0 +1,24 @@
+baseurl: /cookbook
+permalink: 'pretty'
+
+collections:
+  recipes:
+    output: true
+  authors:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "recipe"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

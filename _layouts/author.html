@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1>{{ page.name }}</h1>
+<h2>{{ page.position }}</h2>
+
+{{ content }}
+
+<h2>Meine Rezepte</h2>
+<ul>
+  {% assign filtered_recipes = site.recipes | where: 'author', page.short_name %}
+  {% for recipe in filtered_recipes %}
+    <li><a href="{{site.baseurl}}{{ recipe.url }}">{{ recipe.title }}</a></li>
+  {% endfor %}
+</ul>
